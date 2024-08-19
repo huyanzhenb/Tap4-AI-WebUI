@@ -57,11 +57,11 @@ export default function SubmitForm({ className }: { className?: string }) {
   };
 
   return (
-    <Form {...form}>
+    <Form  {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          'mx-3 mb-5 flex h-[449px] flex-col justify-between rounded-[12px] bg-[#2C2D36] px-3 py-5 lg:h-[557px] lg:w-[444px] lg:p-8',
+          'mx-3 mb-5 flex h-[449px] flex-col justify-between bg-white px-3 py-5 lg:h-[300px] lg:w-[444px] lg:p-8 border-black border-width-[1px] ',
           className,
         )}
       >
@@ -70,32 +70,37 @@ export default function SubmitForm({ className }: { className?: string }) {
             control={form.control}
             name='website'
             render={({ field }) => (
-              <FormItem className='space-y-1'>
-                <FormLabel>{t('website')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder='Tap4 AI'
-                    className='input-border-pink h-[42px] w-full rounded-[8px] border-[0.5px] bg-dark-bg p-5'
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
+              <FormItem className='flex items-center'>  
+  <FormLabel className='flex-1 text-left text-black'>{('*产品名称')}</FormLabel>  
+  <div className='flex-2'>  
+    <FormControl>  
+      <Input  
+        placeholder='请输入'  
+        className='input-border-pink h-[42px] rounded-[8px] border-[0.5px] bg-white p-5 w-[300px] text-black'  
+        {...field}  
+      />  
+    </FormControl>  
+  </div>  
+  <FormMessage />  
+</FormItem>
             )}
           />
           <FormField
             control={form.control}
             name='url'
             render={({ field }) => (
-              <FormItem className='space-y-1'>
-                <FormLabel>{t('url')}</FormLabel>
-                <FormControl>
+              <FormItem>
+                <div className='flex items-center'>
+                  <FormLabel className='flex-1 text-left text-black'>{('*网站url')}</FormLabel>
+                <div className='flex-2'><FormControl>
                   <Input
-                    placeholder={FORM_PLACEHOLDER}
-                    className='input-border-pink h-[42px] w-full rounded-[8px] border-[0.5px] bg-dark-bg p-5'
+                    placeholder='请输入'
+                    className='input-border-pink h-[42px] rounded-[8px] border-[0.5px] bg-white p-5 w-[300px] text-black' 
                     {...field}
                   />
                 </FormControl>
+                </div>
+                </div>               
                 <FormMessage />
               </FormItem>
             )}
@@ -106,17 +111,15 @@ export default function SubmitForm({ className }: { className?: string }) {
             type='submit'
             disabled={loading}
             className={cn(
-              'flex-center mt-auto h-[48px] w-full gap-4 rounded-[8px] bg-white text-center font-bold text-black hover:cursor-pointer hover:opacity-80',
+              'flex-center mt-auto h-[48px] w-full gap-4 rounded-[8px] bg-blue-500 text-center font-bold text-white hover:cursor-pointer hover:opacity-80',
               loading && 'hover:cursor-not-allowed',
             )}
           >
-            {loading ? <Spinning className='size-[22px]' /> : t('submit')}
+            {loading ? <Spinning className='size-[22px]' /> : ('确定提交')}
           </button>
-          <p className='text-[13px] text-white/40'>
-            {t('add')} <span className='text-white'>{WEBSITE_EXAMPLE}</span> {t('text')}
-          </p>
         </div>
       </form>
     </Form>
   );
 }
+

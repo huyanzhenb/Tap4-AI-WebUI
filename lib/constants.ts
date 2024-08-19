@@ -1,15 +1,11 @@
 export const NAV_LINKS = [
   {
-    code: 'discover',
+    code: 'Proxy导航',
     href: '/explore',
   },
   {
-    code: 'submit',
+    code: '提交产品',
     href: '/submit',
-  },
-  {
-    code: 'startup',
-    href: '/startup',
   },
 ];
 

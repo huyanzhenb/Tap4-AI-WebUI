@@ -52,7 +52,7 @@ export default function Navigation() {
                       pathname.includes(item.href) && item.href !== '/' && 'text-white',
                     )}
                   >
-                    {item.label}
+                    {item.code}
                   </li>
                 </Link>
               ))}

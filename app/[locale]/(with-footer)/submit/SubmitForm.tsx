@@ -120,5 +120,4 @@ export default function SubmitForm({ className }: { className?: string }) {
     </Form>
   );
 }
-}
 
